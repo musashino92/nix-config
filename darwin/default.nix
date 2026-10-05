@@ -10,7 +10,6 @@
     ./homebrew.nix
     ./settings.nix
     inputs.home-manager.darwinModules.home-manager
-    inputs.nix-homebrew.darwinModules.nix-homebrew
   ];
 
   # nix config
@@ -20,25 +19,17 @@
         "nix-command"
         "flakes"
       ];
-      # disabled due to https://github.com/NixOS/nix/issues/7273
-      # auto-optimise-store = true;
     };
     enable = false; # using determinate installer
   };
 
   nixpkgs.config.allowUnfree = true;
 
-  # homebrew installation manager
-  nix-homebrew = {
-    user = primaryUser;
-    enable = true;
-    autoMigrate = true;
-  };
-
   # home-manager config
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "backup";
     users.${primaryUser} = {
       imports = [
         ../home

@@ -1,25 +1,16 @@
-_: {
+{ pkgs, ... }:
+{
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
     shellAliases = {
-      la = "ls -la";
-      ".." = "cd ..";
-      "nix-switch" = "sudo darwin-rebuild switch --flake ~/.config/nix";
+      ll = "eza -la";
+      la = "eza -a";
+      ls = "eza";
+      cat = "bat";
     };
-  };
-
-  programs.starship = {
-    enable = true;
-    settings = {
-      add_newline = false;
-      character = {
-        success_symbol = "[λ](bold green)";
-        error_symbol = "[λ](bold red)";
-      };
-    };
+    initExtra = ''
+      # PATH pour darwin-rebuild et Nix
+      export PATH="/run/current-system/sw/bin:$PATH"
+    '';
   };
 }
