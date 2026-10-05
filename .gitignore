@@ -1,0 +1,14 @@
+# Nix
+result
+result-*
+
+# Backups
+*.backup
+*.backup-*
+*.backup_*
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
