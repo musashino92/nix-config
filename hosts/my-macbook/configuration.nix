@@ -4,7 +4,7 @@
   ...
 }:
 {
-  networking.hostName = "my-macbook";
+  networking.hostName = "MacBook-Pro-de-bime";
 
   # host-specific homebrew casks
   homebrew.casks = [

@@ -8,9 +8,9 @@
       ls = "eza";
       cat = "bat";
     };
-    initExtra = ''
-      # PATH pour darwin-rebuild et Nix
-      export PATH="/run/current-system/sw/bin:$PATH"
+    initContent = ''
+      # PATH pour darwin-rebuild, Nix, et outils locaux
+      export PATH="/run/current-system/sw/bin:$HOME/.local/bin:$PATH"
     '';
   };
 }
