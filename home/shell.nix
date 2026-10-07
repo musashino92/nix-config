@@ -11,10 +11,6 @@
     initContent = ''
       # PATH pour darwin-rebuild, Nix, et outils locaux
       export PATH="/run/current-system/sw/bin:$HOME/.local/bin:$PATH"
-
-      # Prompt minimaliste : dossier actuel + flèche
-      PROMPT="%F{cyan}%1~%f %F{green}❯%f "
-      RPROMPT=""
     '';
   };
 }
